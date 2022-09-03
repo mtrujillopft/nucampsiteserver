@@ -7,10 +7,10 @@ campsiteRouter
   .route("/")
   .get((req, res, next) => {
     Campsite.find()
-      .then((campsites) => {
+      .then((campsite) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
-        res.json(campsites);
+        res.json(campsite);
       })
       .catch((err) => next(err));
   })
